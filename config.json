@@ -1,0 +1,63 @@
+{
+  "shell": "/bin/bash",
+  "reportDirectory": "reports",
+  "sessionDirectory": "sessions",
+  "logFile": "report-shell.log",
+  "defaultProfile": "linux-lab",
+  "rules": [
+    {
+      "id": "change-directory",
+      "command": "cd",
+      "priority": 100,
+      "descriptionTemplate": "Перейдём в каталог `{relativeDirectory}`.",
+      "showCommand": false,
+      "outputMode": "errors-only",
+      "enabled": true
+    },
+    {
+      "id": "list-directory",
+      "command": "ls",
+      "priority": 50,
+      "descriptionTemplate": "Просмотрим содержимое каталога `{relativeDirectory}`.",
+      "showCommand": true,
+      "outputMode": "full",
+      "enabled": true
+    },
+    {
+      "id": "create-directory",
+      "command": "mkdir",
+      "priority": 80,
+      "descriptionTemplate": "Создадим каталог `{argument1}`.",
+      "showCommand": true,
+      "outputMode": "errors-only",
+      "enabled": true
+    },
+    {
+      "id": "show-file",
+      "command": "cat",
+      "priority": 70,
+      "descriptionTemplate": "Просмотрим содержимое файла `{argument1}`.",
+      "showCommand": true,
+      "outputMode": "full",
+      "enabled": true
+    },
+    {
+      "id": "create-file",
+      "command": "touch",
+      "priority": 80,
+      "descriptionTemplate": "Создадим файл `{argument1}`.",
+      "showCommand": true,
+      "outputMode": "errors-only",
+      "enabled": true
+    },
+    {
+      "id": "compile",
+      "command": "ghc",
+      "priority": 100,
+      "descriptionTemplate": "Скомпилируем программу командой `{command}`.",
+      "showCommand": true,
+      "outputMode": "full",
+      "enabled": true
+    }
+  ]
+}
